@@ -1,24 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BEAST GYM - Premium Fitness Center</title>
+  <meta name="description" content="BEAST GYM — premium fitness center with 24/7 access, pro trainers, luxury amenities and classes. Join now and transform your body and mind." />
+  <meta name="keywords" content="gym, fitness, bodybuilding, HIIT, yoga, powerlifting, personal trainer, crossfit, membership" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="canonical" href="https://www.beastgym.com/" />
+
+  <!-- Fonts: preconnect & preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
-  
-  <link rel="stylesheet" href="style.css">
-  
+
+  <!-- Font Awesome (deferred by loading minimal CSS first) -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  </noscript>
+
+  <!-- Preload the main stylesheet for performance -->
+  <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.css"></noscript>
+
+  <!-- Structured data for SEO (LocalBusiness) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthClub",
+    "name": "BEAST GYM",
+    "url": "https://www.beastgym.com",
+    "logo": "https://www.beastgym.com/logo.png",
+    "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48",
+    "description": "Premium fitness center with 24/7 access, pro trainers, and luxury amenities.",
+    "telephone": "+1 (555) 123-4567",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Fitness Street",
+      "addressLocality": "Muscle City",
+      "postalCode": "MC 12345"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  }
+  </script>
+
+  <style>
+    /* Minimal critical styles for font-safe fallback while CSS file loads (keeps layout stable) */
+    :root{color-scheme:dark;}
+    a.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
+    a.skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;padding:.5rem 1rem;background:#000;color:#fff;border-radius:6px;z-index:2000}
+  </style>
 </head>
 <body>
+  <!-- Skip link for keyboard users -->
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Navbar -->
   <header>
-    <nav>
+    <nav aria-label="Primary" role="navigation">
       <div class="logo">BEAST<span style="color:#fff">GYM</span></div>
-      <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-      <div class="nav-links">
-        <a href="#home" class="active">Home</a>
+
+      <!-- Menu toggle is a button for accessibility -->
+      <button class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <div class="nav-links" id="primary-navigation">
+        <a href="#home" class="active" aria-current="page">Home</a>
         <a href="#about">About</a>
         <a href="#classes">Classes</a>
         <a href="#trainers">Trainers</a>
@@ -29,299 +85,317 @@
     </nav>
   </header>
 
-  <!-- Hero - FIXED -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>UNLEASH THE BEAST</h1>
-      <p>Join the strongest gym community in the world. Transform your body, mind, and life with our state-of-the-art facilities and world-class trainers.</p>
-      <button class="btn">JOIN NOW</button>
-    </div>
-  </section>
+  <main id="main" tabindex="-1">
+    <!-- Hero -->
+    <section id="home" class="hero" aria-labelledby="hero-title" role="region">
+      <div class="hero-content">
+        <h1 id="hero-title">UNLEASH THE BEAST</h1>
+        <p>Join the strongest gym community in the world. Transform your body, mind, and life with our state-of-the-art facilities and world-class trainers.</p>
+        <button class="btn" id="joinBtn">JOIN NOW</button>
+      </div>
+    </section>
 
-  <!-- Why Choose Us -->
-  <section id="about" style="background:var(--gray);">
-    <h2>WHY CHOOSE BEAST GYM?</h2>
-    <div class="features-grid">
-      <div class="feature-card">
-        <i class="fas fa-dumbbell"></i>
-        <h3>200+ Machines</h3>
-        <p>Top-tier equipment from Hammer Strength & Life Fitness</p>
+    <!-- Why Choose Us -->
+    <section id="about" style="background:var(--gray);" aria-labelledby="why-title">
+      <h2 id="why-title">WHY CHOOSE BEAST GYM?</h2>
+      <div class="features-grid">
+        <article class="feature-card" aria-labelledby="feat1-title">
+          <i class="fas fa-dumbbell" aria-hidden="true"></i>
+          <h3 id="feat1-title">200+ Machines</h3>
+          <p>Top-tier equipment from Hammer Strength & Life Fitness</p>
+        </article>
+        <article class="feature-card" aria-labelledby="feat2-title">
+          <i class="fas fa-clock" aria-hidden="true"></i>
+          <h3 id="feat2-title">24/7 Access</h3>
+          <p>Train anytime – we're always open</p>
+        </article>
+        <article class="feature-card" aria-labelledby="feat3-title">
+          <i class="fas fa-users" aria-hidden="true"></i>
+          <h3 id="feat3-title">Pro Trainers</h3>
+          <p>IFBB Pros & World Champions on staff</p>
+        </article>
+        <article class="feature-card" aria-labelledby="feat4-title">
+          <i class="fas fa-shower" aria-hidden="true"></i>
+          <h3 id="feat4-title">Luxury Amenities</h3>
+          <p>Sauna, ice bath, massage guns, private lockers</p>
+        </article>
       </div>
-      <div class="feature-card">
-        <i class="fas fa-clock"></i>
-        <h3>24/7 Access</h3>
-        <p>Train anytime – we're always open</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-users"></i>
-        <h3>Pro Trainers</h3>
-        <p>IFBB Pros & World Champions on staff</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-shower"></i>
-        <h3>Luxury Amenities</h3>
-        <p>Sauna, ice bath, massage guns, private lockers</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Classes -->
-  <section id="classes">
-    <h2>OUR CLASSES</h2>
-    <div class="classes-grid">
-      <div class="class-card">
-        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="HIIT">
-        <div class="class-info">
-          <h3>HIIT BLAST</h3>
-          <p>Burn 800+ calories in 45 minutes</p>
-          <div class="schedule">Mon, Wed, Fri • 7:00 PM</div>
-        </div>
-      </div>
-      <div class="class-card">
-        <img src="https://images.unsplash.com/flagged/photo-1564740930826-1aabf6c8a776?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8UE9XRVIlMjBZT0dBfGVufDB8fDB8fHww" alt="Yoga">
-        <div class="class-info">
-          <h3>POWER YOGA</h3>
-          <p>Strength + Mobility + Recovery</p>
-          <div class="schedule">Tue, Thu • 6:30 AM</div>
-        </div>
-      </div>
-      <div class="class-card">
-        <img src="https://images.unsplash.com/photo-1636581563884-39569e81cbad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fEJPWElORyUyMENPTUJBVHxlbnwwfHwwfHx8MA%3D%3D" alt="Boxing">
-        <div class="class-info">
-          <h3>BOXING COMBAT</h3>
-          <p>Real technique + cardio knockout</p>
-          <div class="schedule">Sat • 10:00 AM</div>
-        </div>
-      </div>
-      <div class="class-card">
-        <img src="https://images.unsplash.com/photo-1533560904424-a0c61dc306fc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8UE9XRVJMSUZUSU5HfGVufDB8fDB8fHww" alt="Strength">
-        <div class="class-info">
-          <h3>POWERLIFTING</h3>
-          <p>Build raw strength with proper form</p>
-          <div class="schedule">Mon, Wed, Fri • 5:00 PM</div>
-        </div>
-      </div>
-      <div class="class-card">
-        <img src="https://plus.unsplash.com/premium_photo-1661692296765-fc002f942423?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fENZQ0xJTkclMjBFTkRVUkFOQ0UlMjBneW18ZW58MHx8MHx8fDA%3D" alt="Cycling">
-        <div class="class-info">
-          <h3>CYCLING ENDURANCE</h3>
-          <p>High-intensity indoor cycling</p>
-          <div class="schedule">Tue, Thu, Sat • 8:00 AM</div>
-        </div>
-      </div>
-      <div class="class-card">
-        <img src="https://images.pexels.com/photos/2827400/pexels-photo-2827400.jpeg" alt="Crossfit">
-        <div class="class-info">
-          <h3>CROSSFIT CHALLENGE</h3>
-          <p>Functional movements at high intensity</p>
-          <div class="schedule">Mon-Fri • 6:00 AM & 6:00 PM</div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Classes -->
+    <section id="classes" aria-labelledby="classes-title">
+      <h2 id="classes-title">OUR CLASSES</h2>
+      <div class="classes-grid">
+        <!-- Use figure + figcaption for semantics; lazy-load images -->
+        <figure class="class-card">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+               alt="HIIT class in action" loading="lazy" decoding="async" width="1350" height="800">
+          <figcaption class="class-info">
+            <h3>HIIT BLAST</h3>
+            <p>Burn 800+ calories in 45 minutes</p>
+            <div class="schedule">Mon, Wed, Fri • 7:00 PM</div>
+          </figcaption>
+        </figure>
 
-  <!-- Trainers -->
-  <section id="trainers" style="background:var(--gray);">
-    <h2>MEET OUR TRAINERS</h2>
-    <div class="trainers-grid">
-      <div class="trainer-card">
-        <div class="trainer-img">
-          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTh8fFlPR0ElMjBTVFVESU98ZW58MHx8MHx8fDA%3D" alt="Trainer">
-        </div>
-        <div class="trainer-info">
-          <h3>MARCUS JOHNSON</h3>
-          <div class="specialty">IFBB PRO & STRENGTH COACH</div>
-          <p>10+ years experience in bodybuilding and strength training</p>
-          <div class="trainer-social">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="trainer-card">
-        <div class="trainer-img">
-          <img src="https://images.unsplash.com/photo-1758875569243-47fe02e1ba04?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fENST1NTRklUJTIwQ0hBTExFTkdFfGVufDB8fDB8fHww" alt="Trainer">
-        </div>
-        <div class="trainer-info">
-          <h3>SARAH MILLER</h3>
-          <div class="specialty">CERTIFIED YOGA INSTRUCTOR</div>
-          <p>Specialized in power yoga and mobility training</p>
-          <div class="trainer-social">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="trainer-card">
-        <div class="trainer-img">
-          <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Trainer">
-        </div>
-        <div class="trainer-info">
-          <h3>JAMES WILSON</h3>
-          <div class="specialty">BOXING COACH & MMA TRAINER</div>
-          <p>Former professional boxer with 15 years coaching experience</p>
-          <div class="trainer-social">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <figure class="class-card">
+          <img src="https://images.unsplash.com/flagged/photo-1564740930826-1aabf6c8a776?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8UE9XRVIlMjBZT0dBfGVufDB8fDB8fHww"
+               alt="Power yoga class" loading="lazy" decoding="async" width="1200" height="800">
+          <figcaption class="class-info">
+            <h3>POWER YOGA</h3>
+            <p>Strength + Mobility + Recovery</p>
+            <div class="schedule">Tue, Thu • 6:30 AM</div>
+          </figcaption>
+        </figure>
 
-  <!-- Pricing -->
-  <section id="pricing">
-    <h2>MEMBERSHIP PLANS</h2>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <h3>BASIC</h3>
-        <div class="price">$49<span>/month</span></div>
-        <ul style="text-align:left;margin:2rem 0;line-height:2.2;">
-          <li>24/7 Gym Access</li>
-          <li>Lockers & Showers</li>
-          <li>Free Wi-Fi</li>
-          <li>Basic App Access</li>
-        </ul>
-        <button class="btn">Choose Plan</button>
-      </div>
-      <div class="price-card popular">
-        <h3>PREMIUM</h3>
-        <div class="price">$99<span>/month</span></div>
-        <ul style="text-align:left;margin:2rem 0;line-height:2.2;">
-          <li>Everything in Basic</li>
-          <li>All Classes Included</li>
-          <li>Sauna & Recovery Zone</li>
-          <li>1 Guest Pass / Month</li>
-          <li>Nutrition Guide</li>
-        </ul>
-        <button class="btn">Choose Plan</button>
-      </div>
-      <div class="price-card">
-        <h3>ELITE</h3>
-        <div class="price">$199<span>/month</span></div>
-        <ul style="text-align:left;margin:2rem 0;line-height:2.2;">
-          <li>Everything in Premium</li>
-          <li>8 PT Sessions / Month</li>
-          <li>Private Locker</li>
-          <li>VIP Lounge Access</li>
-          <li>Priority Support</li>
-        </ul>
-        <button class="btn">Choose Plan</button>
-      </div>
-    </div>
-  </section>
+        <figure class="class-card">
+          <img src="https://images.unsplash.com/photo-1636581563884-39569e81cbad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0"
+               alt="Boxing training" loading="lazy" decoding="async" width="1200" height="800">
+          <figcaption class="class-info">
+            <h3>BOXING COMBAT</h3>
+            <p>Real technique + cardio knockout</p>
+            <div class="schedule">Sat • 10:00 AM</div>
+          </figcaption>
+        </figure>
 
-  <!-- Gallery -->
-  <section id="gallery" style="background:var(--gray);">
-    <h2>GALLERY</h2>
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Gym">
-        <div class="gallery-overlay">
-          <h3>MAIN TRAINING AREA</h3>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Gym">
-        <div class="gallery-overlay">
-          <h3>CARDIO ZONE</h3>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Gym">
-        <div class="gallery-overlay">
-          <h3>WEIGHT TRAINING</h3>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1758875569440-4abefff43277?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fEZVTkNUSU9OQUwlMjBUUkFJTklOR3xlbnwwfHwwfHx8MA%3D%3D" alt="Gym">
-        <div class="gallery-overlay">
-          <h3>FUNCTIONAL TRAINING</h3>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1602827114685-efbb2717da9f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3ltJTIwR1JPVVAlMjBDTEFTU0VTfGVufDB8fDB8fHww" alt="Gym">
-        <div class="gallery-overlay">
-          <h3>GROUP CLASSES</h3>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1687783615494-b4a1f1af8b58?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8WU9HQSUyMFNUVURJT3xlbnwwfHwwfHx8MA%3D%3D" alt="Gym">
-        <div class="gallery-overlay">
-          <h3>YOGA STUDIO</h3>
-        </div>
-      </div>
-    </div>
-  </section>
+        <figure class="class-card">
+          <img src="https://images.unsplash.com/photo-1533560904424-a0c61dc306fc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0"
+               alt="Powerlifting session" loading="lazy" decoding="async" width="1200" height="800">
+          <figcaption class="class-info">
+            <h3>POWERLIFTING</h3>
+            <p>Build raw strength with proper form</p>
+            <div class="schedule">Mon, Wed, Fri • 5:00 PM</div>
+          </figcaption>
+        </figure>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>CONTACT US</h2>
-    <div class="contact-container">
-      <div class="contact-info">
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div class="contact-text">
-            <h3>OUR LOCATION</h3>
-            <p>123 Fitness Street, Muscle City, MC 12345</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-phone-alt"></i>
-          </div>
-          <div class="contact-text">
-            <h3>PHONE NUMBER</h3>
-            <p>+1 (555) 123-4567</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div class="contact-text">
-            <h3>EMAIL ADDRESS</h3>
-            <p>info@beastgym.com</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-clock"></i>
-          </div>
-          <div class="contact-text">
-            <h3>OPENING HOURS</h3>
-            <p>Monday - Sunday: 24/7</p>
-          </div>
-        </div>
+        <figure class="class-card">
+          <img src="https://plus.unsplash.com/premium_photo-1661692296765-fc002f942423?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0"
+               alt="Indoor cycling" loading="lazy" decoding="async" width="1200" height="800">
+          <figcaption class="class-info">
+            <h3>CYCLING ENDURANCE</h3>
+            <p>High-intensity indoor cycling</p>
+            <div class="schedule">Tue, Thu, Sat • 8:00 AM</div>
+          </figcaption>
+        </figure>
+
+        <figure class="class-card">
+          <img src="https://images.pexels.com/photos/2827400/pexels-photo-2827400.jpeg"
+               alt="Crossfit challenge" loading="lazy" decoding="async" width="1200" height="800">
+          <figcaption class="class-info">
+            <h3>CROSSFIT CHALLENGE</h3>
+            <p>Functional movements at high intensity</p>
+            <div class="schedule">Mon-Fri • 6:00 AM & 6:00 PM</div>
+          </figcaption>
+        </figure>
       </div>
-      <div class="contact-form">
-        <form id="contactForm">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" class="form-control" required>
+    </section>
+
+    <!-- Trainers -->
+    <section id="trainers" style="background:var(--gray);" aria-labelledby="trainers-title">
+      <h2 id="trainers-title">MEET OUR TRAINERS</h2>
+      <div class="trainers-grid">
+        <article class="trainer-card" aria-labelledby="t1">
+          <div class="trainer-img">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&auto=format&fit=crop&q=60"
+                 alt="Marcus Johnson trainer portrait" loading="lazy" decoding="async" width="800" height="1000">
           </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" class="form-control" required>
+          <div class="trainer-info">
+            <h3 id="t1">MARCUS JOHNSON</h3>
+            <div class="specialty">IFBB PRO & STRENGTH COACH</div>
+            <p>10+ years experience in bodybuilding and strength training</p>
+            <div class="trainer-social" aria-label="Marcus social profiles">
+              <a href="#" aria-label="Marcus Instagram" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Marcus Facebook" rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Marcus Twitter" rel="noopener noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" class="form-control">
+        </article>
+
+        <article class="trainer-card" aria-labelledby="t2">
+          <div class="trainer-img">
+            <img src="https://images.unsplash.com/photo-1758875569243-47fe02e1ba04?w=500&auto=format&fit=crop&q=60"
+                 alt="Sarah Miller trainer portrait" loading="lazy" decoding="async" width="800" height="1000">
           </div>
-          <div class="form-group">
-            <label for="message">Your Message</label>
-            <textarea id="message" class="form-control" required></textarea>
+          <div class="trainer-info">
+            <h3 id="t2">SARAH MILLER</h3>
+            <div class="specialty">CERTIFIED YOGA INSTRUCTOR</div>
+            <p>Specialized in power yoga and mobility training</p>
+            <div class="trainer-social" aria-label="Sarah social profiles">
+              <a href="#" aria-label="Sarah Instagram" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Sarah Facebook" rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Sarah Twitter" rel="noopener noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            </div>
           </div>
-          <button type="submit" class="btn" style="width:100%">SEND MESSAGE</button>
-        </form>
+        </article>
+
+        <article class="trainer-card" aria-labelledby="t3">
+          <div class="trainer-img">
+            <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                 alt="James Wilson trainer portrait" loading="lazy" decoding="async" width="800" height="1000">
+          </div>
+          <div class="trainer-info">
+            <h3 id="t3">JAMES WILSON</h3>
+            <div class="specialty">BOXING COACH & MMA TRAINER</div>
+            <p>Former professional boxer with 15 years coaching experience</p>
+            <div class="trainer-social" aria-label="James social profiles">
+              <a href="#" aria-label="James Instagram" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+              <a href="#" aria-label="James Facebook" rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+              <a href="#" aria-label="James Twitter" rel="noopener noreferrer"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" aria-labelledby="pricing-title">
+      <h2 id="pricing-title">MEMBERSHIP PLANS</h2>
+      <div class="pricing-grid">
+        <article class="price-card" aria-labelledby="price-basic">
+          <h3 id="price-basic">BASIC</h3>
+          <div class="price">$49<span>/month</span></div>
+          <ul style="text-align:left;margin:2rem 0;line-height:2.2;">
+            <li>24/7 Gym Access</li>
+            <li>Lockers & Showers</li>
+            <li>Free Wi-Fi</li>
+            <li>Basic App Access</li>
+          </ul>
+          <button class="btn price-btn">Choose Plan</button>
+        </article>
+
+        <article class="price-card popular" aria-labelledby="price-premium">
+          <h3 id="price-premium">PREMIUM</h3>
+          <div class="price">$99<span>/month</span></div>
+          <ul style="text-align:left;margin:2rem 0;line-height:2.2;">
+            <li>Everything in Basic</li>
+            <li>All Classes Included</li>
+            <li>Sauna & Recovery Zone</li>
+            <li>1 Guest Pass / Month</li>
+            <li>Nutrition Guide</li>
+          </ul>
+          <button class="btn price-btn">Choose Plan</button>
+        </article>
+
+        <article class="price-card" aria-labelledby="price-elite">
+          <h3 id="price-elite">ELITE</h3>
+          <div class="price">$199<span>/month</span></div>
+          <ul style="text-align:left;margin:2rem 0;line-height:2.2;">
+            <li>Everything in Premium</li>
+            <li>8 PT Sessions / Month</li>
+            <li>Private Locker</li>
+            <li>VIP Lounge Access</li>
+            <li>Priority Support</li>
+          </ul>
+          <button class="btn price-btn">Choose Plan</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" style="background:var(--gray);" aria-labelledby="gallery-title">
+      <h2 id="gallery-title">GALLERY</h2>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+               alt="Main training area" loading="lazy" decoding="async" width="1350" height="900">
+          <figcaption class="gallery-overlay"><h3>MAIN TRAINING AREA</h3></figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+               alt="Cardio zone" loading="lazy" decoding="async" width="1350" height="900">
+          <figcaption class="gallery-overlay"><h3>CARDIO ZONE</h3></figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+               alt="Weight training area" loading="lazy" decoding="async" width="1350" height="900">
+          <figcaption class="gallery-overlay"><h3>WEIGHT TRAINING</h3></figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1758875569440-4abefff43277?w=500&auto=format&fit=crop&q=60"
+               alt="Functional training" loading="lazy" decoding="async" width="1200" height="900">
+          <figcaption class="gallery-overlay"><h3>FUNCTIONAL TRAINING</h3></figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1602827114685-efbb2717da9f?w=500&auto=format&fit=crop&q=60"
+               alt="Group classes" loading="lazy" decoding="async" width="1200" height="900">
+          <figcaption class="gallery-overlay"><h3>GROUP CLASSES</h3></figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1687783615494-b4a1f1af8b58?w=500&auto=format&fit=crop&q=60"
+               alt="Yoga studio" loading="lazy" decoding="async" width="1200" height="900">
+          <figcaption class="gallery-overlay"><h3>YOGA STUDIO</h3></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">CONTACT US</h2>
+      <div class="contact-container">
+        <div class="contact-info" aria-hidden="false">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+            <div class="contact-text">
+              <h3>OUR LOCATION</h3>
+              <p>123 Fitness Street, Muscle City, MC 12345</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></div>
+            <div class="contact-text">
+              <h3>PHONE NUMBER</h3>
+              <p><a href="tel:+15551234567" rel="noopener noreferrer">+1 (555) 123-4567</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+            <div class="contact-text">
+              <h3>EMAIL ADDRESS</h3>
+              <p><a href="mailto:info@beastgym.com" rel="noopener noreferrer">info@beastgym.com</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+            <div class="contact-text">
+              <h3>OPENING HOURS</h3>
+              <p>Monday - Sunday: 24/7</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="contact-form" aria-labelledby="contact-form-title">
+          <h3 id="contact-form-title" class="visually-hidden">Contact form</h3>
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" class="form-control" required aria-required="true" autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" class="form-control" required aria-required="true" autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" class="form-control" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" class="form-control" required aria-required="true"></textarea>
+            </div>
+            <div role="status" aria-live="polite" id="formStatus" style="min-height:1.25rem"></div>
+            <button type="submit" class="btn" style="width:100%">SEND MESSAGE</button>
+          </form>
+        </aside>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
@@ -329,16 +403,17 @@
       <div class="footer-column">
         <h3>BEAST GYM</h3>
         <p>Transform your body, mind, and life with our state-of-the-art facilities and world-class trainers.</p>
-        <div class="footer-social">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+        <div class="footer-social" aria-label="Social links">
+          <a href="#" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+          <a href="#" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
         </div>
       </div>
+
       <div class="footer-column">
         <h3>QUICK LINKS</h3>
-        <ul class="footer-links">
+        <ul class="footer-links" role="list">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#classes">Classes</a></li>
@@ -346,73 +421,138 @@
           <li><a href="#pricing">Pricing</a></li>
         </ul>
       </div>
+
       <div class="footer-column">
         <h3>CONTACT INFO</h3>
-        <ul class="footer-links">
-          <li><i class="fas fa-map-marker-alt"></i> 123 Fitness Street, Muscle City</li>
-          <li><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</li>
-          <li><i class="fas fa-envelope"></i> info@beastgym.com</li>
-          <li><i class="fas fa-clock"></i> Open 24/7</li>
+        <ul class="footer-links" role="list">
+          <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 123 Fitness Street, Muscle City</li>
+          <li><i class="fas fa-phone-alt" aria-hidden="true"></i> <a href="tel:+15551234567" rel="noopener noreferrer">+1 (555) 123-4567</a></li>
+          <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@beastgym.com" rel="noopener noreferrer">info@beastgym.com</a></li>
+          <li><i class="fas fa-clock" aria-hidden="true"></i> Open 24/7</li>
         </ul>
       </div>
     </div>
+
     <div class="copyright">
       <p>&copy; 2025 Crafted with passion by Hamid Achaou. All rights reserved.</p>
-    </div>    
+    </div>
   </footer>
 
   <!-- WhatsApp Float -->
-  <a href="https://wa.me/15551234567" target="_blank" class="whatsapp-float">
-    <i class="fab fa-whatsapp"></i>
+  <a href="https://wa.me/15551234567" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
   </a>
 
+  <!-- Inline/Bottom script (keeps same behavior but accessible + progressive enhancement) -->
   <script>
-    // Mobile Menu
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-      document.querySelector('.nav-links').classList.toggle('active');
-    });
+    // Accessibility helpers & event bindings
+    (function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      const joinBtn = document.getElementById('joinBtn');
+      const priceButtons = document.querySelectorAll('.price-btn');
+      const contactForm = document.getElementById('contactForm');
+      const formStatus = document.getElementById('formStatus');
 
-    // Active Nav
-    window.addEventListener('scroll', () => {
-      let current = '';
-      document.querySelectorAll('section').forEach(section => {
-        if (window.scrollY >= section.offsetTop - 150) {
-          current = section.getAttribute('id');
-        }
-      });
-      document.querySelectorAll('.nav-links a').forEach(a => {
-        a.classList.remove('active');
-        if (a.getAttribute('href') === `#${current}`) a.classList.add('active');
-      });
-    });
+      // Mobile Menu toggle
+      function setMenuExpanded(expanded) {
+        menuToggle.setAttribute('aria-expanded', expanded.toString());
+        if(expanded) navLinks.classList.add('active');
+        else navLinks.classList.remove('active');
+      }
 
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
+      menuToggle.addEventListener('click', () => {
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        setMenuExpanded(!expanded);
+      });
+
+      // Close menu on Esc
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setMenuExpanded(false);
+      });
+
+      // Close mobile nav when a link clicked
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => setMenuExpanded(false));
+      });
+
+      // Active section highlight
+      const sections = document.querySelectorAll('section[id]');
+      const navAnchors = document.querySelectorAll('.nav-links a');
+      function onScroll() {
+        let current = '';
+        sections.forEach(section => {
+          if (window.scrollY >= section.offsetTop - 160) {
+            current = section.getAttribute('id');
+          }
+        });
+        navAnchors.forEach(a => {
+          a.classList.remove('active');
+          if (a.getAttribute('href') === `#${current}`) {
+            a.classList.add('active');
+            a.setAttribute('aria-current','page');
+          } else {
+            a.removeAttribute('aria-current');
+          }
+        });
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Smooth scroll for in-page links (enhanced)
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function(e) {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+            setMenuExpanded(false);
+            target.focus({preventScroll:true});
+          }
+        });
+      });
+
+      // Join Now brings user to pricing
+      joinBtn && joinBtn.addEventListener('click', function() {
+        document.querySelector('#pricing').scrollIntoView({ behavior: 'smooth' });
+      });
+
+      // Pricing Buttons
+      priceButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          alert('Thank you for your interest! Please contact us to complete your membership registration.');
+        });
+      });
+
+      // Contact form (client-side validation + accessible status)
+      contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-        document.querySelector('.nav-links').classList.remove('active');
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const message = document.getElementById('message');
+
+        if(!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+          formStatus.textContent = 'Please fill all required fields.';
+          formStatus.style.color = '#ffb3b3';
+          name.focus();
+          return;
+        }
+
+        formStatus.textContent = 'Thank you for your message! We will get back to you soon.';
+        formStatus.style.color = '#b3ffb3';
+        this.reset();
       });
-    });
 
-    // Form Submission
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Thank you for your message! We will get back to you soon.');
-      this.reset();
-    });
-
-    // Join Now Button
-    document.querySelector('.hero-content .btn').addEventListener('click', function() {
-      document.querySelector('#pricing').scrollIntoView({ behavior: 'smooth' });
-    });
-
-    // Pricing Buttons
-    document.querySelectorAll('.price-card .btn').forEach(button => {
-      button.addEventListener('click', function() {
-        alert('Thank you for your interest! Please contact us to complete your membership registration.');
-      });
-    });
+      // Reduce motion for users who prefer less animation
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (reduce.matches) {
+        document.querySelectorAll('*').forEach(el => {
+          el.style.animationDuration = '0.001ms';
+          el.style.animationIterationCount = '1';
+          el.style.transitionDuration = '0.001ms';
+        });
+      }
+    })();
   </script>
 </body>
 </html>
