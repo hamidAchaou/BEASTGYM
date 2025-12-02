@@ -1,0 +1,27 @@
+name: Deploy Static Website
+
+on:
+  push:
+    branches:
+      - main   # <-- deploy when pushing to main branch
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Prepare static files
+        run: |
+          mkdir dist
+          cp -R * dist
+
+      - name: Upload artifact
