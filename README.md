@@ -104,16 +104,16 @@ Your site is live here:
 📍 Morocco | Full-Stack / Frontend Developer  
 💼 Skilled in: HTML, CSS, JavaScript, React, PHP, Laravel, MySQL, UI/UX & SEO
 
-📌 Portfolio: https://your-portfolio.com  
-📌 GitHub: https://github.com/hamidachaou
+📌 Portfolio: https://hamidachaou.github.io/hamid-achaou/
+📌 GitHub: https://github.com/hamidAchaou
 
 ---
 
 ## 📩 Hire Me
 
 Interested in professional frontend work or website builds?
-- ✉ Email: your@email.com  
-- 📱 WhatsApp: https://wa.me/your-number
+- ✉ Email: hamidachaou379@gmail.com
+- 📱 WhatsApp: +212643320632
 
 ---
 
