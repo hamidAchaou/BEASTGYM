@@ -1,6 +1,6 @@
 # 🏋️ BEAST GYM – Premium Fitness Website
 
-[![Deploy to GitHub Pages](https://github.com/hamidachaou/BEASTGYM/actions/workflows/deploy.yml/badge.svg)](https://github.com/hamidachaou/BEASTGYM/actions/workflows/deploy.yml)
+[![Deploy to GitHub Pages](https://github.com/hamidachaou/BEASTGYM/actions/workflows/deploy.yml/badge.svg)](https://github.com/hamidAchaou/BEASTGYM/actions)
 
 A **modern, high-performance, and accessible landing page** for a premium fitness center — designed, built, and hosted using **GitHub Pages + GitHub Actions**.
 
