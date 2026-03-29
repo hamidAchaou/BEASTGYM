@@ -76,7 +76,7 @@ Your site is live here:
 ---
 
 ## 📂 File Structure
-
+```bash
 /
 ├── index.html
 ├── style.css
@@ -85,9 +85,7 @@ Your site is live here:
 │ └── workflows/
 │ └── deploy.yml
 ├── README.md
-
-
----
+```
 
 ## 📈 Lighthouse Targets
 
